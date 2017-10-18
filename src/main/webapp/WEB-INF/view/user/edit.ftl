@@ -64,4 +64,6 @@
 		<script type="text/javascript" src="${base}/static/plugins/layui/layui.js"></script>
 		<script type="text/javascript" src="${base}/static/js/app/user/edit.js"></script>
 	</body>
+
+
 </html>

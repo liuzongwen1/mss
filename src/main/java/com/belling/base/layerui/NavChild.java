@@ -47,4 +47,40 @@ public class NavChild implements Serializable {
 	/** 排序 **/
 	@JSONField(serialize = false)
 	private Integer sort;
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getHref() {
+		return href;
+	}
+
+	public void setHref(String href) {
+		this.href = href;
+	}
+
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
 }

@@ -26,10 +26,26 @@ public class RolePermission extends PersistentObject {
 	private static final long serialVersionUID = 2817362249993235590L;
 
 	/** 应用ID */
-	@NonNull
+
 	private Integer roleId;
 	
 	/** 权限ID */
-	@NonNull
+
 	private Integer permissionId;
+
+	public Integer getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
+	}
+
+	public Integer getPermissionId() {
+		return permissionId;
+	}
+
+	public void setPermissionId(Integer permissionId) {
+		this.permissionId = permissionId;
+	}
 }

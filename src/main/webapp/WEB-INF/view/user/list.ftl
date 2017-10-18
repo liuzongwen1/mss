@@ -98,11 +98,11 @@
 	<#-- 操作按钮   -->
 	<script id="opbtn" type="text/html">
 		<@shiro.hasPermission name="sys:user:edit">  
-		<a class="layui-btn layui-btn-small  layui-btn-normal btn-edit" data-id="{{ d.id }}">编辑</a>
+			<a class="layui-btn layui-btn-small  layui-btn-normal btn-edit" data-id="{{ d.id }}">编辑</a>
 		</@shiro.hasPermission> 
 		
 		<@shiro.hasPermission name="sys:user:delete">  
-		<a class="layui-btn layui-btn-small layui-btn-danger btn-del" data-id="{{ d.id }}">删除</a>
+			<a class="layui-btn layui-btn-small layui-btn-danger btn-del" data-id="{{ d.id }}">删除</a>
 		</@shiro.hasPermission> 
 	</script>
 	
