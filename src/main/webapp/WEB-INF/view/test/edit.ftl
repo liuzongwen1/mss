@@ -13,56 +13,64 @@
 	</head>
 
 	<body>
-		<div style="margin: 15px;">
-			<fieldset class="layui-elem-field layui-field-title none" style="margin-top: 20px;">
-				<legend>填写用户信息</legend>
-			</fieldset>
-			<form class="layui-form layui-form-pane" action="${base}/admin/user/save" method="post">
-				<div class="layui-form-item">
-					<div class="layui-input-inline">
-						<input type="hidden" name="id" value="${vo.id}" lay-verify="id" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">登录名</label>
-					<div class="layui-input-inline">
-						<input type="text" name="account" value="${vo.account}" lay-verify="account" placeholder="请输入登录名" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">用户密码</label>
-					<div class="layui-input-inline">
-						<input type="password" name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
-				</div>
-				<div class="layui-form-item" pane="">
-					<label class="layui-form-label">是否启用</label>
-					<div class="layui-input-block">
-						<#if vo.isEnable == true>
-						<input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchOn" title="是否启用">
-						<#else>
-						<input type="checkbox" name="open" lay-skin="switch" lay-filter="switchOn" title="是否启用">
-						</#if>
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<div class="layui-input-block">
-						<button class="layui-btn" lay-submit="" lay-filter="btnSub">
-							<i class="layui-icon">&#xe605;</i> 提 交
-						</button>
-						<button type="reset" class="layui-btn layui-btn-normal">
-							<i class="layui-icon">&#xe60e;</i> 重置
-						</button> 
-						<button type="button" class="layui-btn layui-btn-primary" id="btnBack" lay-filter="btnBack">
-							<i class="layui-icon">&#x1006;</i> 取 消
-						</button>
-					</div>
-				</div>
-			</form>
+
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			<legend>选完文件后不自动上传</legend>
+		</fieldset>
+
+		<div class="layui-upload">
+			<button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+			<button type="button" class="layui-btn" id="test9">开始上传</button>
 		</div>
+
 		<script type="text/javascript" src="${base}/static/plugins/layui/layui.js"></script>
-		<script type="text/javascript" src="${base}/static/js/app/user/edit.js"></script>
+
+		<script type="text/javascript">
+            layui.use('upload', function() {
+                var $ = layui.jquery
+                        , upload = layui.upload;
+
+                //普通图片上传
+                var uploadInst = upload.render({
+                    elem: '#test1'
+                    , url: '/upload/'
+                    , before: function (obj) {
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function (index, file, result) {
+                            $('#demo1').attr('src', result); //图片链接（base64）
+                        });
+                    }
+                    , done: function (res) {
+                        //如果上传失败
+                        if (res.code > 0) {
+                            return layer.msg('上传失败');
+                        }
+                        //上传成功
+                    }
+                    , error: function () {
+                        //演示失败状态，并实现重传
+                        var demoText = $('#demoText');
+                        demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                        demoText.find('.demo-reload').on('click', function () {
+                            uploadInst.upload();
+                        });
+                    }
+                });
+            });
+
+			//选完文件后不自动上传
+			/*upload.render({
+				elem: '#test8'
+				,url: '/upload/'
+				,auto: false
+				//,multiple: true
+				,bindAction: '#test9'
+				,done: function(res){
+					console.log(res)
+				}
+			});*/
+		</script>
+
 	</body>
 
 
