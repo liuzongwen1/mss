@@ -17,7 +17,7 @@ layui.use(['form', 'layedit', 'jacommon', 'laydate', 'layer','element','form'], 
 		$ = layui.jquery,
 		element = layui.element(),
 		layedit = layui.layedit;
-	
+
 	//自定义验证规则
 	form.verify({
 		account : function(value) {

@@ -42,6 +42,8 @@ public class NavNode implements Serializable {
 	
 	/** 垂直导航栏 是否展开 **/
 	private boolean spread;
+
+	private Integer sort;
 	
 	/** 垂直导航栏 是否展开 **/
 	private Collection<NavChild> children;

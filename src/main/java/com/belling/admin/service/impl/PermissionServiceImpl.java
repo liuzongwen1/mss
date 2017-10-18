@@ -130,7 +130,7 @@ public class PermissionServiceImpl extends BaseServiceImpl<PermissionMapper, Per
 				parentMap.put(p.getId(), NavNode.builder()
 						.title(p.getName())
 						.spread(false)
-						.icon(p.getIcon())
+						.icon(p.getIcon()).sort(p.getSort())
 						.build());
 			} else {
 				NavChild child = NavChild.builder()
@@ -155,13 +155,16 @@ public class PermissionServiceImpl extends BaseServiceImpl<PermissionMapper, Per
 		// 分组
 		parentMap.forEach((key,value) -> {
 			Set<NavChild> childList = childMap.get(key);
-			List<NavChild> sortList = Lists.newArrayList(childList);
-			sortList(sortList, "sort", "ASC");
-			value.setChildren(sortList);
+			if(childList != null){
+				List<NavChild> sortList = Lists.newArrayList(childList);
+				sortList(sortList, "sort", "ASC");
+				value.setChildren(sortList);
+			}
 			parentMap.put(key, value);
 		});
 		
 		List<NavNode> nodes = new ArrayList<NavNode>(parentMap.values());
+		sortList(nodes, "sort", "ASC");//对主页签进行排序
 		// 默认展开第一个
 		if (nodes.size() > 0) {
 			NavNode first = nodes.get(0);

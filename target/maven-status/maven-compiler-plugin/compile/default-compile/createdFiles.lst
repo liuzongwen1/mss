@@ -43,6 +43,7 @@ com\belling\base\provider\IdProvider.class
 com\belling\admin\service\impl\UserRoleServiceImpl.class
 com\belling\base\service\impl\BaseServiceImpl$1.class
 com\belling\base\freemarker\FreeMarkerConfigExtend.class
+com\belling\admin\controller\test\TestController.class
 com\belling\admin\mapper\LoginLogMapper.class
 com\belling\base\mapper\BaseMapper.class
 com\belling\base\controller\BaseController.class
