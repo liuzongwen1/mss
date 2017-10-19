@@ -5,6 +5,7 @@ D:\sourceCode\mss\src\main\java\com\belling\admin\service\UserOnlineService.java
 D:\sourceCode\mss\src\main\java\com\belling\base\model\PersistentObject.java
 D:\sourceCode\mss\src\main\java\com\belling\admin\controller\houtai\UserRoleController.java
 D:\sourceCode\mss\src\main\java\com\belling\base\security\ShiroAuthRealm.java
+D:\sourceCode\mss\src\main\java\com\belling\admin\controller\test\TestController.java
 D:\sourceCode\mss\src\main\java\com\belling\base\contants\ResponseCode.java
 D:\sourceCode\mss\src\main\java\com\belling\base\controller\BaseController.java
 D:\sourceCode\mss\src\main\java\com\belling\base\model\Pagination.java

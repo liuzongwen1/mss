@@ -78,6 +78,7 @@ com\belling\admin\model\Permission.class
 com\belling\admin\freemarker\tags\SettingHasDirective.class
 com\belling\admin\mapper\PermissionMapper.class
 com\belling\admin\dto\UserOnlineDTO.class
+com\belling\base\util\ImageHelper.class
 com\belling\admin\model\Role.class
 com\belling\admin\controller\houtai\ModifyPwdCtroller.class
 com\belling\admin\service\PermissionService.class

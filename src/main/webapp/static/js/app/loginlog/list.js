@@ -92,7 +92,8 @@ layui.use(['form','layer', 'laytpl', 'page_table', 'laydate', 'jacommon', 'tab']
 				"sFirst" : "首页",
 				"sPrevious" : "上一页",
 				"sNext" : "下一页",
-				"sLast" : "末页"
+				"sLast" : "末页",
+				"sJump":" function(obj, first){if(!first){layer.msg('第 '+ obj.curr +' 页');}}"
 			}
 		},
 		"searching" : false, // 是否显示搜索
